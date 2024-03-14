@@ -1,22 +1,43 @@
-"use client";
 import { createSlice } from "@reduxjs/toolkit";
+
 const initialState = {
-  isLoading: true,
-  isLight: true,
+  cart: [],
+  paymentMethods: [],
+  openModal: false,
 };
-export const GlobalStateSlice = createSlice({
-  name: "globalState",
+
+const cartSlice = createSlice({
+  name: "cart",
   initialState,
   reducers: {
-    setLoading: (state, value) => {
-      state.isLoading = value.payload;
-      return state;
+    setOpenModal: (state) => {
+      state.openModal = !state.openModal;
     },
-    setisLight:()=>{
-        state.isLight = !state.isLight;
-        return state;
+    setPaymentMethods: (state, action) => {
+      state.paymentMethods = action.payload;
+    },
+    setCart: (state, action) => {
+      state.cart = action.payload;
+    },
+    addItemToCart: (state, action) => {
+      state.cart.push(action.payload);
+    },
+    removeItemFromCart: (state, action) => {
+      state.cart = state.cart.filter((item, index) => index !== action.payload);
+    },
+    emptyCart: (state) => {
+      state.cart = [];
     },
   },
 });
-export const { setLoading, setisLight } = GlobalStateSlice.actions;
-export default GlobalStateSlice.reducer;
+
+export const {
+  setOpenModal,
+  setPaymentMethods,
+  setCart,
+  addItemToCart,
+  removeItemFromCart,
+  emptyCart,
+} = cartSlice.actions;
+
+export default cartSlice.reducer;
