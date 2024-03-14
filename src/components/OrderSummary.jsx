@@ -7,12 +7,12 @@ import { useRouter } from "next/navigation";
 const OrderSummaryItem = ({ label, value, children }) => {
   return (
     <div className="flex justify-between text-sm">
-      <span className="font-medium">{label}</span>
+      <span className="font-medium text-gray-500">{label}</span>
       {value ? <span className="font-medium">{value}</span> : children}
     </div>
   );
 };
-
+  
 const OrderSummary = ({ subTotal, isCartEmpty }) => {
   console.log("subtotal->",subTotal);
   const router = useRouter();
@@ -60,7 +60,7 @@ const OrderSummary = ({ subTotal, isCartEmpty }) => {
 
   return (
     <div className="space-y-8 border rounded-lg p-8 w-full">
-      <h2 className="text-lg font-bold">Order Summary</h2>
+      <h2 className="text-xl font-bold md:text-2xl">Order Summary</h2>
       <div className="space-y-6">
         <OrderSummaryItem label="Subtotal" value={formatPrice(subTotal)} />
         <OrderSummaryItem label="Shipping Charges">

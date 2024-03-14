@@ -16,13 +16,13 @@ const CartItem = ({
   };
 
   return (
-    <div className="flex flex-col md:flex-row justify-between ">
+    <div className="flex flex-col md:flex-row justify-between border p-6 rounded-lg">
       <li
         li
         key={name}
         className="flex flex-col py-6 sm:flex-row sm:justify-between"
       >
-        <div className="flex w-full space-x-2 sm:space-x-4 items-center">
+        <div className="flex w-full space-x-2 sm:space-x-4 items-center gap-8">
           <Image
             width={150}
             height={150}
@@ -31,20 +31,21 @@ const CartItem = ({
             alt={title}
           />
           <div className="flex w-full flex-col m-auto  ">
-            <div className="flex w-full justify-between space-x-2 pb-2">
+            <div className="flex w-full justify-between space-x-2 pb-2 mb-4">
               <div className="space-y-1 align-middle flex items-center">
-                <p className="text-sm">{title}</p>
+                <p className="text-gray-900 font-bold text-lg">{title}</p>
               </div>
             </div>
-            <div className="flex w-full justify-between  pb-2">
+            <div className="flex w-full justify-between items-center">
               <div className="text-right">
-                <p className="text-lg font-semibold">${price}</p>
+                <p className="font-semibold text-primary">${price}</p>
+              </div>
+              <div className="flex items-center space-x-2 px-2 py-1 pl-0 text-sm text-gray-500">
+                <span>Quantity - {quantity}</span>
               </div>
             </div>
             <div className="flex divide-x text-sm">
-              <div className="flex items-center space-x-2 px-2 py-1 pl-0">
-                <span>Quantity - {quantity}</span>
-              </div>
+             
             </div>
           </div>
         </div>

@@ -42,13 +42,15 @@ export default function Home() {
   return (
     <>
       {
-        loading ? <Loader /> : <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 py-6 md:py-8 lg:py-12">
+        loading ? <Loader /> : <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 py-6">
         <div className="flex flex-col lg:flex-row items-start lg:items-stretch gap-8 md:gap-16">
-          <div className="flex-2 border rounded-lg p-2 md:p-4 lg:p-8 min-w-full lg:min-w-96 lg:max-w-3xl">
-            <h2 className="text-xl font-extrabold md:text-2xl">
-              Shopping Cart ({cart.length} {cartItemsText})
+          <div className="flex-2 rounded-lg p-2 md:p-4 lg:p-8 min-w-full lg:min-w-96 lg:max-w-3xl">
+            <div className="flex justify-between items-center mb-6">
+            <h2 className="text-xl font-bold md:text-2xl">
+              Shopping Cart 
             </h2>
-
+            <p className="text-gray-500">({cart.length} {cartItemsText})</p>
+            </div>
             {cart.length < 1 && <EmptyCart />}
 
             <div className="space-y-6">
@@ -77,8 +79,8 @@ export default function Home() {
               subTotal={subTotal}
               isCartEmpty={cart.length > 0 ? false : true}
             />
-            <div className="mt-6 font-semibold">
-              <p>or</p>
+            <div className="mt-6 font-semibold text-center space-y-4">
+              <p className="text-sm text-gray-500">or</p>
               <button className="text-blue-500" onClick={reloadCart}>
                 Continue shopping
               </button>

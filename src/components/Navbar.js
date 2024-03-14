@@ -3,7 +3,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <header className="bg-white p-8 lg:ml-30 xl:ml-20">
+    <header className="bg-white p-4 border-b">
       <div className="flex items-center">
         <Image
           width={50}
