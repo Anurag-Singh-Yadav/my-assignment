@@ -14,7 +14,7 @@ const Footer = () => {
                 <Image
                 width={30}
                 height={30}
-                  src="https://groww.in/groww-logo-270.png"
+                  src="/groww-logo-270.png"
                   alt="groww image"
                   className="w-8 h-8"
                 />

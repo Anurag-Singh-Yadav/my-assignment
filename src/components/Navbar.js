@@ -4,16 +4,17 @@ import React, { useState } from "react";
 import { MdDarkMode } from "react-icons/md";
 import { CiLight } from "react-icons/ci";
 import { useTheme } from "next-themes";
+import Link from "next/link";
 const Navbar = () => {
   const { setTheme } = useTheme();
   const [flag, setFlag] = useState(false);
   return (
     <header className="flex justify-between items-center p-4 border-b">
-      <div className="flex items-center">
+      <Link href={'/'} className="flex items-center">
         <Image
           width={50}
           height={50}
-          src="https://groww.in/groww-logo-270.png"
+          src="/groww-logo-270.png"
           alt="groww image"
           className="w-8 h-8"
         />
@@ -22,7 +23,7 @@ const Navbar = () => {
             Ecommerce Cart - Groww
           </h1>
         </div>
-      </div>
+      </Link>
       <div>
         {flag ? (
           <MdDarkMode
