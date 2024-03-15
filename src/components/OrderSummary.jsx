@@ -5,7 +5,8 @@ import { formatPrice } from "./PriceTag";
 import { useRouter } from "next/navigation";
 
 import { useDispatch, useSelector } from "react-redux";
-import {setTotalPayment} from "../app/GlobalRedux/Features/GlobalStateSlice";
+import { setTotalPayment } from "../app/GlobalRedux/Features/GlobalStateSlice";
+import Link from "next/link";
 
 const OrderSummaryItem = ({ label, value, children }) => {
   return (
@@ -15,9 +16,9 @@ const OrderSummaryItem = ({ label, value, children }) => {
     </div>
   );
 };
-  
+
 const OrderSummary = ({ subTotal, isCartEmpty }) => {
-  console.log("subtotal->",subTotal);
+  console.log("subtotal->", subTotal);
   const router = useRouter();
   const [appliedCoupon, setAppliedCoupon] = useState("");
   const [discount, setDiscount] = useState(0);
@@ -123,9 +124,17 @@ const OrderSummary = ({ subTotal, isCartEmpty }) => {
           )}
         </div>
       </div>
+      <div>
+        <Link
+          href={"/address"}
+          className="border cursor-pointer py-2 px-4 w-fit"
+        >
+          Edit Address
+        </Link>
+      </div>
       <button
         onClick={handleCheckout}
-        className={`bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold ${
+        className={`bg-primary text-white px-6 py-3 rounded-lg font-semibold ${
           isCartEmpty && "cursor-not-allowed opacity-50"
         }`}
         disabled={isCartEmpty}

@@ -1,30 +1,28 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
-const Page = ({ onSubmit }) => {
+const Page = () => {
   const [fullName, setFullName] = useState("");
   const [address, setAddress] = useState("");
   const [zipCode, setZipCode] = useState("");
   const [city, setCity] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
+  const router = useRouter();
 
   const handleSubmit = () => {
     if (!fullName || !address || !zipCode || !city || !phoneNumber || !email) {
       alert("Please fill in all fields.");
       return;
     }
-
-    // If all validations pass, proceed with form submission
     alert("Address saved successfully!");
-
-    // Trigger the callback provided by the parent component
-    onSubmit();
+    router.push('/');
   };
 
   return (
     <div className="p-8 w-full">
-      <div className="border w-[60%] border-gray-300 rounded-lg p-6">
+      <div className="border mx-auto w-[60%] border-gray-300 rounded-lg p-6">
         <h2 className="text-lg font-semibold mb-4">Delivery Information</h2>
         <div className="space-y-6">
           <div className="">
