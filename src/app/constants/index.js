@@ -8,17 +8,19 @@ export const paymentMethods = [
   {
     id: "CARDS",
     title: "Debit/Credit Card",
-    subtitle: "1234*********",
+    subtitle: "3042*********",
     icon: React.createElement(CgCreditCard, { size: 30 }),
   },
   {
     id: "UPI",
     title: "UPI",
+    subtitle: "Pay directly from your bank account",
     icon: React.createElement(RiHandCoinLine, { size: 30 }),
   },
   {
     id: "WALLET",
     title: "E-Wallet",
+    subtitle: "Pay from your wallet",
     icon: React.createElement(LuWallet, { size: 30 }),
   },
   {
@@ -48,11 +50,11 @@ export const themes = [
 
 export function getRandomStatus() {
   const randomValue = Math.random();
-  if (randomValue < 0.4) {
+  // if (randomValue < 0.4) {
     return "success";
-  } else if (randomValue < 0.7) {
-    return "pending";
-  } else {
-    return "failed";
-  }
+  // } else if (randomValue < 0.7) {
+    // return "pending";
+  // } else {
+    // return "failed";
+  // }
 }

@@ -7,25 +7,23 @@ import OrderSummary from "@/components/OrderSummary";
 import { useEffect, useState } from "react";
 import { checkout } from "@/fetchFunctions/checkout";
 import { useDispatch, useSelector } from "react-redux";
-import {setPaymentMethods} from "./GlobalRedux/Features/GlobalStateSlice";
+import {setPaymentMethods, setCart} from "./GlobalRedux/Features/GlobalStateSlice";
 export default function Home() {
-  const [cart, setCart] = useState([]);
   const [loading, setLoading] = useState(true);
   const [subTotal, setSubTotal] = useState(0);
-  const [totalCartItems, setTotalCartItems] = useState(0);
   const [cartItemsText, setCartItemsText] = useState("Item");
   const dispatch = useDispatch();
+  const cart = useSelector((state) => state.GlobalState.cart);
   const getCartItems = async () => {
     const res = await checkout();
     setSubTotal(calculateTotalValue(res?.products));
     console.log("res", res);
-    setCart(res?.products);
+    dispatch(setCart(res?.products));    
     dispatch(setPaymentMethods(res?.paymentMethods));
+    setLoading(false);
   };
-
   useEffect(() => {
     getCartItems();
-    setLoading(false);
   }, []);
 
   const calculateTotalValue = (cart) => {

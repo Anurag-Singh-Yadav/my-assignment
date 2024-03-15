@@ -13,15 +13,16 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import Image from "next/image";
+import { useSelector } from "react-redux";
 function Page() {
   const [orderDetails, setOrderDetails] = useState(null);
-  const { totalAmount } = useTotalAmount();
+  const totalAmount = useSelector((state) => state.GlobalState.totalPayment);
   const [status, setStatus] = useState("");
-
+  const cart = useSelector((state) => state.GlobalState.cart);
+  const selectedMethod = useSelector((state) => state.GlobalState.selectedMethod);
+  console.log("orderDetails", orderDetails);
   useEffect(() => {
-    const storedData = localStorage.getItem("orderDetails");
-    const data = JSON.parse(storedData);
-    setOrderDetails(data);
+    setOrderDetails(cart);
     setStatus(getRandomStatus());
   }, []);
   useEffect(() => {
@@ -70,7 +71,7 @@ function Page() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {orderDetails?.products?.map((product, index) => (
+          {orderDetails?.map((product, index) => (
             <TableRow
               key={index}
               className="border-b border-black/20 dark:border-white/20 h-20"
@@ -97,10 +98,10 @@ function Page() {
                 ${product.price * product.quantity}
               </TableCell>
               <TableCell
-                rowSpan={orderDetails.products.length}
+                rowSpan={orderDetails?.length}
                 className={`${index !== 0 && "hidden"} text-center`}
               >
-                {localStorage.getItem("selectedMethod")}
+                {selectedMethod}
               </TableCell>
             </TableRow>
           ))}

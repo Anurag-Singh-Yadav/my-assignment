@@ -25,11 +25,7 @@ const Footer = () => {
           <div className="w-auto ml-4 md:ml-0 p-4 md:p-8">
             
             <span className="ml-2 text-md font-medium">
-              Built with{" "}
-              <span role="img" aria-label="heart">
-                ❤️
-              </span>{" "}
-              by Anurag
+              © 2021 Groww. All rights reserved.             
             </span>
           </div>
           <div className="w-auto ml-4 md:ml-0 p-4 lg:p-8">

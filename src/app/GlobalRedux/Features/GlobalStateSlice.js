@@ -4,6 +4,7 @@ const initialState = {
   cart: [],
   paymentMethods: [],
   totalPayment: 0,
+  selectedMethod :""
 };
 
 const cartSlice = createSlice({
@@ -13,17 +14,14 @@ const cartSlice = createSlice({
     setOpenModal: (state) => {
       state.openModal = !state.openModal;
     },
+    setSelectedMethod :(state, action)=>{
+      state.selectedMethod = action.payload;
+    },
     setPaymentMethods: (state, action) => {
       state.paymentMethods = action.payload;
     },
     setCart: (state, action) => {
       state.cart = action.payload;
-    },
-    addItemToCart: (state, action) => {
-      state.cart.push(action.payload);
-    },
-    removeItemFromCart: (state, action) => {
-      state.cart = state.cart.filter((item, index) => index !== action.payload);
     },
     setTotalPayment: (state, action) => {
       state.totalPayment = action.payload;
@@ -42,6 +40,7 @@ export const {
   removeItemFromCart,
   emptyCart,
   setTotalPayment,
+  setSelectedMethod
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
