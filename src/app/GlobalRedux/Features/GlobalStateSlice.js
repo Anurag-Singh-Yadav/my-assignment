@@ -11,9 +11,6 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    setOpenModal: (state) => {
-      state.openModal = !state.openModal;
-    },
     setSelectedMethod :(state, action)=>{
       state.selectedMethod = action.payload;
     },
@@ -26,19 +23,12 @@ const cartSlice = createSlice({
     setTotalPayment: (state, action) => {
       state.totalPayment = action.payload;
     },
-    emptyCart: (state) => {
-      state.cart = [];
-    },
   },
 });
 
 export const {
-  setOpenModal,
   setPaymentMethods,
   setCart,
-  addItemToCart,
-  removeItemFromCart,
-  emptyCart,
   setTotalPayment,
   setSelectedMethod
 } = cartSlice.actions;

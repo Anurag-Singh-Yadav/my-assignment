@@ -6,7 +6,7 @@ import { CgCreditCard } from "react-icons/cg";
 import { TbTruckDelivery } from "react-icons/tb";
 export const paymentMethods = [
   {
-    id: "CARDS",
+    id: "Cards",
     title: "Debit/Credit Card",
     subtitle: "3042*********",
     icon: React.createElement(CgCreditCard, { size: 30 }),
@@ -18,7 +18,7 @@ export const paymentMethods = [
     icon: React.createElement(RiHandCoinLine, { size: 30 }),
   },
   {
-    id: "WALLET",
+    id: "Wallet",
     title: "E-Wallet",
     subtitle: "Pay from your wallet",
     icon: React.createElement(LuWallet, { size: 30 }),
