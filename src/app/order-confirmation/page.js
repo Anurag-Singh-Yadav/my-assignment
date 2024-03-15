@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
-import { getRandomStatus } from "../../constants";
+import { getRandomStatus } from "../constants/index";
 import {
   Table,
   TableBody,

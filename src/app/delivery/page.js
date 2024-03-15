@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-const DeliveryDetails = ({ onSubmit }) => {
+const Page = ({ onSubmit }) => {
   const [fullName, setFullName] = useState("");
   const [address, setAddress] = useState("");
   const [zipCode, setZipCode] = useState("");
@@ -23,11 +23,11 @@ const DeliveryDetails = ({ onSubmit }) => {
   };
 
   return (
-    <div className="p-8">
-      <div className="flex-1 max-w-lg border border-gray-300 rounded-lg p-6">
+    <div className="p-8 w-full">
+      <div className="border w-[60%] border-gray-300 rounded-lg p-6">
         <h2 className="text-lg font-semibold mb-4">Delivery Information</h2>
         <div className="space-y-6">
-          <div>
+          <div className="">
             <label htmlFor="fullName" className="block mb-1">
               Full Name
             </label>
@@ -119,4 +119,4 @@ const DeliveryDetails = ({ onSubmit }) => {
   );
 };
 
-export default DeliveryDetails;
+export default Page;

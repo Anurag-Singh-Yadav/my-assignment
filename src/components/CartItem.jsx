@@ -33,7 +33,7 @@ const CartItem = ({
           <div className="flex w-full flex-col m-auto  ">
             <div className="flex w-full justify-between space-x-2 pb-2 mb-4">
               <div className="space-y-1 align-middle flex items-center">
-                <p className="text-gray-900 font-bold text-lg">{title}</p>
+                <p className="text-gray-900 font-bold line-clamp-2 text-lg">{title}</p>
               </div>
             </div>
             <div className="flex w-full justify-between items-center">

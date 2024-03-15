@@ -4,6 +4,9 @@ import { FaArrowRight } from "react-icons/fa";
 import { formatPrice } from "./PriceTag";
 import { useRouter } from "next/navigation";
 
+import { useDispatch, useSelector } from "react-redux";
+import {setTotalPayment} from "../app/GlobalRedux/Features/GlobalStateSlice";
+
 const OrderSummaryItem = ({ label, value, children }) => {
   return (
     <div className="flex justify-between text-sm">
@@ -20,7 +23,7 @@ const OrderSummary = ({ subTotal, isCartEmpty }) => {
   const [discount, setDiscount] = useState(0);
   const [couponCode, setCouponCode] = useState("");
   const [isCouponCodeVisible, setIsCouponCodeVisible] = useState(false);
-
+  const dispatch = useDispatch();
   const applyCoupon = (code) => {
     let appliedDiscount = 0;
     switch (code) {
@@ -50,13 +53,14 @@ const OrderSummary = ({ subTotal, isCartEmpty }) => {
   };
 
   const handleCheckout = () => {
-    router.push("/delivery");
+    router.push("/payment");
   };
 
   let grandTotal = subTotal - discount;
   if (subTotal < 499) {
     grandTotal += 199;
   }
+  dispatch(setTotalPayment(grandTotal));
 
   return (
     <div className="space-y-8 border rounded-lg p-8 w-full">

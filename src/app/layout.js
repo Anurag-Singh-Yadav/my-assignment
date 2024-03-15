@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
@@ -24,6 +25,14 @@ export default function RootLayout({ children }) {
           >
             <Navbar />
             {children}
+            <Toaster
+              position="top-right"
+              toastOptions={{
+                loading: {
+                  duration: 2000,
+                },
+              }}
+            />
             <Footer />
           </ThemeProvider>
         </Providers>

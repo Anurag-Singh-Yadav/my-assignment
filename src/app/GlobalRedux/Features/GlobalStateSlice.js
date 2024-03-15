@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   cart: [],
   paymentMethods: [],
-  openModal: false,
+  totalPayment: 0,
 };
 
 const cartSlice = createSlice({
@@ -25,6 +25,9 @@ const cartSlice = createSlice({
     removeItemFromCart: (state, action) => {
       state.cart = state.cart.filter((item, index) => index !== action.payload);
     },
+    setTotalPayment: (state, action) => {
+      state.totalPayment = action.payload;
+    },
     emptyCart: (state) => {
       state.cart = [];
     },
@@ -38,6 +41,7 @@ export const {
   addItemToCart,
   removeItemFromCart,
   emptyCart,
+  setTotalPayment,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
