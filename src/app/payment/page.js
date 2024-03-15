@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { PiCirclesFourLight } from "react-icons/pi";
 import PaymentComponent from "../../components/PaymentComponent";
-import Image from "next/image";
 import { paymentMethods } from "../constants/index";
 import { useSelector } from "react-redux";
 import { IoCheckmarkCircleSharp } from "react-icons/io5";
@@ -44,7 +43,7 @@ function Page() {
               }}
               className={`rounded-md border px-4 py-3 flex max-w-xl w-full gap-8 my-2 items-center  ${
                 isClickable
-                  ? "dark:hover:bg-slate-400 hover:bg-slate-200 dark:bg-[#101012] cursor-pointer "
+                  ? "dark:hover:bg-slate-200 hover:bg-slate-200 dark:bg-[#101012] cursor-pointer "
                   : "dark:bg-[#1E1E1E] bg-slate-50 "
               }`}
             >

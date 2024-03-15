@@ -17,7 +17,7 @@ const EmptyCart = () => {
       />
       <h2 className="font-bold text-xl mt-2">Your Cart is Empty</h2>
       <div className="text-gray-500 mt-2">
-        Looks like you haven't added any products to your cart yet
+        Looks like you have not added any products to your cart yet
       </div>
       <button
         className="bg-blue-500 text-white py-2 px-4 rounded-lg text-sm flex items-center mt-6"
