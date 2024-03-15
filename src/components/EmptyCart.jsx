@@ -11,13 +11,14 @@ const EmptyCart = () => {
       <Image
         width={150}
         height={150}
-        src="https://img.freepik.com/premium-vector/shopping-cart-with-cross-mark-wireless-paymant-icon-shopping-bag-failure-paymant-sign-online-shopping-vector_662353-912.jpg"
+        src="/empty-cart.webp"
         alt="empty_cart"
         className="w-40 h-40"
       />
       <h2 className="font-bold text-xl mt-2">Your Cart is Empty</h2>
-      <p className="text-center">Add something to make me happy :)</p>
-
+      <div className="text-gray-500 mt-2">
+        Looks like you haven't added any products to your cart yet
+      </div>
       <button
         className="bg-blue-500 text-white py-2 px-4 rounded-lg text-sm flex items-center mt-6"
         onClick={reloadCart}

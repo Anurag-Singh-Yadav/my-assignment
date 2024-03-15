@@ -1,9 +1,14 @@
+"use client";
 import Image from "next/image";
-import React from "react";
-
+import React, { useState } from "react";
+import { MdDarkMode } from "react-icons/md";
+import { CiLight } from "react-icons/ci";
+import { useTheme } from "next-themes";
 const Navbar = () => {
+  const { setTheme } = useTheme();
+  const [flag, setFlag] = useState(false);
   return (
-    <header className="bg-white p-4 border-b">
+    <header className="flex justify-between items-center p-4 border-b">
       <div className="flex items-center">
         <Image
           width={50}
@@ -13,13 +18,31 @@ const Navbar = () => {
           className="w-8 h-8"
         />
         <div className="ml-4">
-          <h1 className="hidden sm:block md:text-xl font-bold text-black">
+          <h1 className="hidden sm:block md:text-xl dark:text-white font-bold text-black">
             Ecommerce Cart - Groww
           </h1>
         </div>
       </div>
       <div>
-
+        {flag ? (
+          <MdDarkMode
+            onClick={() => {
+              setFlag(!flag);
+              setTheme("dark");
+            }}
+            size={25}
+            className="cursor-pointer"
+          />
+        ) : (
+          <CiLight
+            onClick={() => {
+              setFlag(!flag);
+              setTheme("light");
+            }}
+            size={25}
+            className="cursor-pointer"
+          />
+        )}
       </div>
     </header>
   );
