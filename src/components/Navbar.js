@@ -13,7 +13,7 @@ const Navbar = () => {
           className="w-8 h-8"
         />
         <div className="ml-4">
-          <h1 className="text-xl font-bold text-black">
+          <h1 className="hidden sm:block md:text-xl font-bold text-black">
             Ecommerce Cart - Groww
           </h1>
         </div>

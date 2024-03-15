@@ -46,8 +46,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 py-6">
           <div className="flex flex-col lg:flex-row items-start lg:items-stretch gap-8 md:gap-16">
             <div className="flex-2 rounded-lg p-2 md:p-4 lg:p-8 min-w-full">
-              <div className="relative grid grid-cols-5 gap-10 w-full">
-                <div className="space-y-6 col-span-3">
+              <div className="relative grid grid-cols-1 lg:grid-cols-5 gap-10 w-full">
+                <div className="space-y-6 lg:col-span-3">
                   {cart.length < 1 && <EmptyCart />}
                   <div className="flex justify-between items-center mb-6">
                     <h2 className="text-xl font-bold md:text-2xl">
@@ -76,7 +76,7 @@ export default function Home() {
                   ))}
                 </div>
 
-                <div className="col-span-2 sticky top-0">
+                <div className="w-full lg:col-span-2 md:sticky md:top-0">
                   <OrderSummary
                     subTotal={subTotal}
                     isCartEmpty={cart.length > 0 ? false : true}

@@ -5,7 +5,7 @@ import { CiLinkedin } from "react-icons/ci";
 import Image from "next/image";
 const Footer = () => {
   return (
-    <section className="relative overflow-hidden bg-white py-8">
+    <section className="relative w-full overflow-hidden bg-white py-8">
       <div className="container relative z-10 mx-auto px-4">
         <div className="-m-8 flex flex-wrap items-center justify-center md:justify-between">
           <div className="w-auto ml-4 md:ml-0 p-4 lg:p-8">

@@ -21,8 +21,8 @@ const Page = () => {
   };
 
   return (
-    <div className="p-8 w-full">
-      <div className="border mx-auto w-[60%] border-gray-300 rounded-lg p-6">
+    <div className="p-4 md:p-8 w-full">
+      <div className="border mx-auto w-full sm:w-[95vw] md:w-[60%] border-gray-300 rounded-lg p-6">
         <h2 className="text-lg font-semibold mb-4">Delivery Information</h2>
         <div className="space-y-6">
           <div className="">
@@ -107,7 +107,7 @@ const Page = () => {
           </div>
           <button
             onClick={handleSubmit}
-            className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600"
+            className="w-full bg-primary text-white py-2 rounded-md"
           >
             Save Address
           </button>

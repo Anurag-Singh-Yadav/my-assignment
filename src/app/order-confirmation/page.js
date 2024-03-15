@@ -17,51 +17,27 @@ import { useSelector } from "react-redux";
 function Page() {
   const [orderDetails, setOrderDetails] = useState(null);
   const totalAmount = useSelector((state) => state.GlobalState.totalPayment);
-  const [status, setStatus] = useState("");
   const cart = useSelector((state) => state.GlobalState.cart);
   const selectedMethod = useSelector((state) => state.GlobalState.selectedMethod);
   console.log("orderDetails", orderDetails);
   useEffect(() => {
     setOrderDetails(cart);
-    setStatus(getRandomStatus());
   }, []);
-  useEffect(() => {
-    if (status === "pending") {
-      toast.loading("Waiting for Transaction to complete...");
-      setTimeout(() => {
-        setStatus("success");
-      }, 2000);
-    } else if (status === "failed") {
-      toast.error("Transaction failed!");
-    } else if (status === "success") {
-      toast.success("Transaction Successfull!");
-    }
-  }, [status]);
-  const getStatusText = (status) => {
-    switch (status) {
-      case "success":
-        return "Your transaction was successful";
-      case "pending":
-        return "Your transaction is pending";
-      case "failed":
-        return "Your transaction failed";
-      default:
-        return "Unknown status";
-    }
-  };
+ 
+
   return (
-    <div className="invert-colors px-5 mt-10 flex flex-col justify-center items-center">
+    <div className="invert-colors px-5 mt-10 flex flex-col justify-center items-center overflow-auto">
       <Table>
         <TableCaption className="text-3xl font-bold mb-10">
-          {getStatusText(status)}
+          Success
         </TableCaption>
         <TableHeader className="w-full">
           <TableRow className="w-full">
             <TableHead className="sm:w-2/6 3/6 text-center">Product</TableHead>
-            <TableHead className="w-1/6 text-center max-sm:hidden">
+            <TableHead className="w-1/6 text-center">
               Quantity
             </TableHead>
-            <TableHead className="w-1/6 text-center max-sm:hidden">
+            <TableHead className="w-1/6 text-center">
               Price
             </TableHead>
             <TableHead className="sm:w-1/6 w-1/4 text-center">Amount</TableHead>
@@ -83,15 +59,15 @@ function Page() {
                     width={50}
                     height={50}
                     alt={product.title}
-                    className="hidden md:flex"
+                    className=""
                   />
-                  <span className="overflow-hidden">{product.title}</span>
+                  <span className="overflow-hidden hidden sm:flex">{product.title}</span>
                 </div>
               </TableCell>
-              <TableCell className="text-center max-sm:hidden">
+              <TableCell className="text-center ">
                 {product.quantity}
               </TableCell>
-              <TableCell className="text-center max-sm:hidden">
+              <TableCell className="text-center">
                 {product.price}
               </TableCell>
               <TableCell className="text-center">

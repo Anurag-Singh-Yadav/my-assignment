@@ -18,7 +18,6 @@ const OrderSummaryItem = ({ label, value, children }) => {
 };
 
 const OrderSummary = ({ subTotal, isCartEmpty }) => {
-  console.log("subtotal->", subTotal);
   const router = useRouter();
   const [appliedCoupon, setAppliedCoupon] = useState("");
   const [discount, setDiscount] = useState(0);
@@ -124,17 +123,17 @@ const OrderSummary = ({ subTotal, isCartEmpty }) => {
           )}
         </div>
       </div>
-      <div>
+      <div  className=" text-right">
         <Link
           href={"/address"}
-          className="border cursor-pointer py-2 px-4 w-fit"
+          className=" underline cursor-pointer pb-1 text-primary w-fit"
         >
           Edit Address
         </Link>
       </div>
       <button
         onClick={handleCheckout}
-        className={`bg-primary text-white px-6 py-3 rounded-lg font-semibold ${
+        className={`bg-primary w-full text-white px-6 py-3 rounded-lg font-semibold ${
           isCartEmpty && "cursor-not-allowed opacity-50"
         }`}
         disabled={isCartEmpty}
