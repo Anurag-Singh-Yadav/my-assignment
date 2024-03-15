@@ -6,7 +6,7 @@ import { CgCreditCard } from "react-icons/cg";
 import { TbTruckDelivery } from "react-icons/tb";
 export const paymentMethods = [
   {
-    id: "Cards",
+    id: "CARDS",
     title: "Debit/Credit Card",
     subtitle: "3042*********",
     icon: React.createElement(CgCreditCard, { size: 30 }),

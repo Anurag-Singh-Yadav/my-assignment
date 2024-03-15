@@ -1,5 +1,4 @@
 "use client";
-
 import CartItem from "@/components/CartItem";
 import EmptyCart from "@/components/EmptyCart";
 import Loader from "@/components/Loader";
@@ -11,7 +10,6 @@ import {setPaymentMethods, setCart} from "./GlobalRedux/Features/GlobalStateSlic
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [subTotal, setSubTotal] = useState(0);
-  const [cartItemsText, setCartItemsText] = useState("Item");
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.GlobalState.cart);
   const getCartItems = async () => {
@@ -54,24 +52,13 @@ export default function Home() {
                       Shopping Cart
                     </h2>
                     <p className="text-gray-500">
-                      ({cart.length} {cartItemsText})
+                      ({cart.length} {"Items"})
                     </p>
                   </div>
                   {cart.map((product, index) => (
                     <CartItem
-                      key={product.id}
-                      onClickDelete={() => {
-                        hookCart.removeItemFromCart(index);
-                      }}
+                      key={index}
                       {...product}
-                      onChangeQuantity={(productId, quantity) => {
-                        let existingCart = cart.map((item) =>
-                          item.id === productId
-                            ? { ...item, quantity: quantity }
-                            : item
-                        );
-                        setCart(existingCart);
-                      }}
                     />
                   ))}
                 </div>

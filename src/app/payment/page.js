@@ -22,16 +22,20 @@ function Page() {
     setPaymentMethodsAvailable(payment);
   }, []);
   return (
-    <div className="flex  flex-col pt-10 px-5 min-h-screen">
-      <div className="flex items-center w-full">
+    <div className="flex relative flex-col pt-10 px-5 min-h-screen">
+      <div className="flex fixed top-16 left-2 items-center w-fit">
         <Link href="/">
-          <MdKeyboardArrowLeft size={25} color="gray" />
+          <MdKeyboardArrowLeft size={30} color="gray" />
         </Link>
-        <div className="text-3xl font-bold w-full text-center">Payment</div>
       </div>
-      <h2 className="text-center mb-10  mt-2 text-slate-400">
-        Choose payment method
-      </h2>
+      <div>
+        <h1 className="text-3xl font-bold w-full text-center">
+          Payment
+        </h1>
+        <h2 className="text-center mb-10  mt-2 text-slate-400">
+          Choose payment method
+        </h2>
+      </div>
       <div className="flex flex-col w-full h-full items-center">
         {paymentMethods.map((method) => {
           const isClickable = paymentMethodsAvailable?.includes(method.id);
@@ -43,7 +47,7 @@ function Page() {
               }}
               className={`rounded-md border px-4 py-3 flex max-w-xl w-full gap-8 my-2 items-center  ${
                 isClickable
-                  ? "dark:hover:bg-slate-200 hover:bg-slate-200 dark:bg-[#101012] cursor-pointer "
+                  ? "dark:hover:bg-gray-600 hover:bg-slate-200 dark:bg-[#101012] cursor-pointer "
                   : "dark:bg-[#1E1E1E] bg-slate-50 "
               }`}
             >
@@ -53,7 +57,7 @@ function Page() {
                   <h5 className="truncate overflow-hidden max-w-full">
                     {method.title}
                   </h5>
-                  <p className="text-slate-600 font-sm">{method.subtitle}</p>
+                  <p className="text-slate-400 font-sm">{method.subtitle}</p>
                 </div>
 
                 {method.id === selected ? (
@@ -67,7 +71,7 @@ function Page() {
             </div>
           );
         })}
-        <PaymentComponent totalAmount={totalPayment} selected = {selected} />
+        <PaymentComponent totalAmount={totalPayment} selected={selected} />
       </div>
     </div>
   );

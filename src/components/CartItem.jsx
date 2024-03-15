@@ -1,25 +1,18 @@
 "use client";
 import Image from "next/image";
 const CartItem = ({
-  isGiftWrapping,
   title,
-  description,
   quantity,
   image: imageUrl,
-  currency,
   price,
-  onChangeQuantity,
-  onClickDelete,
 }) => {
-  const handleDeleteClick = () => {
-    onClickDelete?.();
-  };
+  
 
   return (
     <div className="flex flex-col md:flex-row justify-between border p-6 rounded-lg">
       <li
         li
-        key={name}
+        key={"name"}
         className="flex flex-col py-6 sm:flex-row sm:justify-between"
       >
         <div className="flex w-full space-x-2 sm:space-x-4 items-center gap-8">
