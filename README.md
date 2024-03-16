@@ -21,7 +21,7 @@ git clone  https://github.com/Anurag-Singh-Yadav/my-assignment
 2. **Install Dependencies**: 
 
 ```bash 
-cd groww_assignment  && npm install
+cd my-assignment  && npm install
 ```
 
 3. **Start server**: 
