@@ -2,16 +2,6 @@
 
 It is a chekout experience flow made with Next.Js . 
 
-## Web View Dark-Mode
-https://github.com/Anurag-Singh-Yadav/my-assignment/darkMode.png
-
-## Web View Light-Mode
-https://raw.githubusercontent.com/Anurag-Singh-Yadav/my-assignment/master/public/lightMode.png
-
-## Mobile View 
-https://github.com/Anurag-Singh-Yadav/my-assignment/mobileView.png
-
-
 ## Setup 
 
 To setup this repo pls follow this steps - 
