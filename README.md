@@ -3,12 +3,12 @@
 It is a chekout experience flow made with Next.Js . 
 
 ## Web View 
-https://github.com/Anurag-Singh-Yadav/my-assignment/blob/master/public/darkmodeImage
+https://github.com/Anurag-Singh-Yadav/my-assignment/public/darkmodeImage
 
 ## Mobile View 
-https://github.com/Anurag-Singh-Yadav/my-assignment/blob/master/public/mobileView1
+https://github.com/Anurag-Singh-Yadav/my-assignment/public/mobileView1
 
-https://github.com/Anurag-Singh-Yadav/my-assignment/blob/master/public/mobileView2
+https://github.com/Anurag-Singh-Yadav/my-assignment/public/mobileView2
 
 ## Setup 
 
