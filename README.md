@@ -3,13 +3,13 @@
 It is a chekout experience flow made with Next.Js . 
 
 ## Web View Dark-Mode
-https://github.com/Anurag-Singh-Yadav/my-assignment/public/darkMode.png
+https://github.com/Anurag-Singh-Yadav/my-assignment/darkMode.png
 
 ## Web View Light-Mode
-https://github.com/Anurag-Singh-Yadav/my-assignment/public/lightMode.png
+https://github.com/Anurag-Singh-Yadav/my-assignment/lightMode.png
 
 ## Mobile View 
-https://github.com/Anurag-Singh-Yadav/my-assignment/public/mobileView.png
+https://github.com/Anurag-Singh-Yadav/my-assignment/mobileView.png
 
 
 ## Setup 
