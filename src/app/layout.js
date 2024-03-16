@@ -5,6 +5,8 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Providers } from "./GlobalRedux/Providers";
+import Head from "next/head";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -15,6 +17,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content={metadata.description} />
+        <title>{metadata.title}</title>
+      </Head>
       <body className={inter.className}>
         <Providers>
           <ThemeProvider
@@ -33,7 +42,7 @@ export default function RootLayout({ children }) {
                 },
               }}
             />
-              <Footer />
+            <Footer />
           </ThemeProvider>
         </Providers>
       </body>
